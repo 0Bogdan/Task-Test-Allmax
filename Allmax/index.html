@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="css/css.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+    <header class="page-header">
+        header
+    </header>
+
+    <div class="row">
+    <div class="col-md-12 text-center">
+        <button  type="button" class="btn btn-primary" onClick='actionClearStorage()'>ClearStorage</button>
+
+        <button  class="btn btn-primary" onclick="actionShow()">Create</button>
+
+        <select class=" " id="filter" onchange=" actionFilter(this.value)">  <!--Фильтр-->
+            <option value="Все">Все</option>
+            <option value="Обычная">Обычные</option>
+            <option value="Важная">Важные</option>
+            <option value="Очень важная">Очень важные</option>
+        </select>
+    </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-12">
+        <table class="table table-bordered  " id="table" >  <!--Таблица-->
+            <tr>
+                <th>Номер</th>
+                <th>Статус</th>
+                <th>Название</th>
+                <th>Описание</th>
+                <th>Важность</th>
+                <th>Дедлайн</th>
+                <th>Дата выполнения</th>
+                <th>Действия</th>
+            </tr>
+
+        </table>
+        </div>
+
+
+        <div class=" col-md-12" id="app" style="display: none">
+            <form class="text-center form-control" onsubmit="actionSave()">
+                <label for="name">Название</label>
+
+                <input id='name' required>
+                <label for="label">Описание</label>
+
+                <input id='label'  required>
+                <label for="importance">Важность</label>
+
+                <select id="importance">
+                    <option value="Обычная">Обычная</option>
+                    <option value="Важная">Важная</option>
+                    <option value="Очень важная">Очень важная</option>
+                </select>
+                <label for="deadline">Дедлайн</label>
+
+                <input id='deadline' type="date" >
+                <label for="dateOfCompletion">Дата выполнения</label>
+
+                <input id='dateOfCompletion' type="date" required>
+                <button  class="btn btn-primary" type="submit" id="save">Save</button>
+            </form>
+        </div>
+
+    </div>
+    <script src="JavaScript/JavaScript.js"></script>
+    <footer class="panel-footer">footer</footer>
+
+
+</div>
+
+</body>
+</html>
+
+
+
